@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temple Crowd Booking System</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div>
+                <p class="eyebrow">Temple & Event Access</p>
+                <h1>Temple / Event Crowd Booking System</h1>
+            </div>
+            <span class="pill">Smart Visitor Management</span>
+        </header>
+
+        <section class="event-section">
+            <div class="section-head">
+                <h2>Available Temple / Event Schedules</h2>
+            </div>
+            <div id="eventList" class="event-grid"></div>
+        </section>
+
+        <section class="panel booking-panel">
+            <div class="section-head">
+                <h2 id="formTitle">Book a Visit</h2>
+            </div>
+
+            <form id="bookingForm">
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Temple / Event</label>
+                        <select id="eventSelect"></select>
+                    </div>
+
+                    <div class="field">
+                        <label>Visit Date</label>
+                        <input id="dateInput" type="date" />
+                    </div>
+
+                    <div class="field">
+                        <label>Session</label>
+                        <select id="sessionSelect"></select>
+                    </div>
+
+                    <div class="field">
+                        <label>Visitor Name</label>
+                        <input id="visitorName" type="text" placeholder="Enter full name" />
+                    </div>
+
+                    <div class="field">
+                        <label>Contact Number</label>
+                        <input id="contactInfo" type="tel" placeholder="10-digit phone number" />
+                    </div>
+
+                    <div class="field">
+                        <label>Number of Visitors</label>
+                        <input id="guestCount" type="number" min="1" max="20" value="1" />
+                    </div>
+
+                    <div class="field full">
+                        <label>Additional Notes</label>
+                        <textarea id="notes" rows="3" placeholder="Any special request or notes"></textarea>
+                    </div>
+                </div>
+
+                <input type="hidden" id="bookingId" />
+                <div class="form-actions">
+                    <button class="primary" type="submit">Submit Booking</button>
+                    <button class="secondary" type="button" id="cancelEdit">Cancel Edit</button>
+                </div>
+            </form>
+
+            <div id="message" class="message"></div>
+        </section>
+
+        <section class="panel list-panel">
+            <div class="section-head list-head">
+                <h2>Booking List</h2>
+                <div class="filters">
+                    <input id="searchInput" type="search" placeholder="Search bookings..." />
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="Confirmed">Confirmed</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Checked In">Checked In</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="bookingList" class="booking-list"></div>
+        </section>
+
+        <section class="panel detail-panel">
+            <div class="section-head">
+                <h2>Booking Details</h2>
+            </div>
+            <div id="bookingDetail" class="detail-box empty">Select a booking to view details.</div>
+        </section>
+    </div>
+
+    <script src="javascript.js" defer></script>
+</body>
+
+</html>

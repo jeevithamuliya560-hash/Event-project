@@ -1,0 +1,356 @@
+:root {
+  --primary: #c65d36;
+  --primary-dark: #8a3a1d;
+  --bg: #fff6f1;
+  --card: #fffdfb;
+  --text: #2e201d;
+  --muted: #735d58;
+  --border: #f0d7ce;
+  --success: #2a9d6d;
+  --warning: #d98a1c;
+  --danger: #d95555;
+  --shadow: 0 12px 30px rgba(198, 93, 54, 0.14);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #fff3ec 0%, #fffaf6 100%);
+  color: var(--text);
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 18px 40px;
+}
+
+.header {
+  background: linear-gradient(135deg, var(--primary), #b9664b);
+  color: white;
+  border-radius: 18px;
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+.pill {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.event-section,
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 22px;
+  margin-top: 22px;
+}
+
+.section-head {
+  margin-bottom: 18px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.event-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  background: linear-gradient(180deg, #fffdfb 0%, #fff3ef 100%);
+}
+
+.event-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.event-meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.event-card button,
+.primary, .secondary, .small-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.event-card button:hover,
+.primary:hover, .secondary:hover, .small-btn:hover {
+  transform: translateY(-1px);
+}
+
+.event-card button {
+  background: var(--primary);
+  color: white;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-weight: 700;
+  color: var(--text);
+}
+
+input, select, textarea {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #e7d1ca;
+  border-radius: 10px;
+  padding: 12px 13px;
+  color: var(--text);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid rgba(198, 93, 54, 0.18);
+  border-color: var(--primary);
+}
+
+.form-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.secondary {
+  background: #f2e5e0;
+  color: var(--primary-dark);
+}
+
+.message {
+  margin-top: 16px;
+  min-height: 22px;
+  display: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.message.show {
+  display: block;
+}
+
+.message.success {
+  background: rgba(31, 157, 97, 0.1);
+  color: var(--success);
+  border: 1px solid rgba(31, 157, 97, 0.2);
+}
+
+.message.error {
+  background: rgba(214, 69, 69, 0.08);
+  color: var(--danger);
+  border: 1px solid rgba(214, 69, 69, 0.18);
+}
+
+.list-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.booking-list {
+  display: grid;
+  gap: 14px;
+}
+
+.booking-card {
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--primary);
+  background: #fffdfa;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.booking-card.selected {
+  box-shadow: 0 6px 18px rgba(198, 93, 54, 0.10);
+}
+
+.booking-top,
+.booking-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.booking-id {
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status.Confirmed { background: rgba(31,157,97,0.12); color: var(--success); }
+.status.Pending { background: rgba(216,139,26,0.12); color: var(--warning); }
+.status.Checked\ In { background: rgba(198,93,54,0.12); color: var(--primary-dark); }
+.status.Cancelled { background: rgba(214,69,69,0.12); color: var(--danger); }
+
+.booking-card h3 {
+  margin: 8px 0 6px;
+}
+
+.booking-meta {
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.booking-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.small-btn {
+  background: #f9efe9;
+  color: var(--primary-dark);
+}
+
+.small-btn.delete {
+  background: rgba(214,69,69,0.12);
+  color: var(--danger);
+}
+
+.detail-box {
+  min-height: 190px;
+  border-radius: 14px;
+  border: 1px dashed #e9c8bd;
+  background: #fffdfa;
+  padding: 18px;
+}
+
+.detail-box.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.detail-item {
+  background: #fff7f4;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.detail-label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.detail-value {
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-grid,
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filters { width: 100%; }
+  .filters > * { flex: 1 1 100%; }
+}

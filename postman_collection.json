@@ -1,0 +1,111 @@
+{
+  "info": {
+    "name": "Temple Booking API",
+    "description": "Collection for testing CRUD operations on temple event bookings.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Get All Bookings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/bookings",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "bookings"]
+        }
+      }
+    },
+    {
+      "name": "Get Booking By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/bookings/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "bookings", "1"]
+        }
+      }
+    },
+    {
+      "name": "Create Booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"templeName\": \"Srisailam Temple\",\n  \"visitDate\": \"2026-08-25\",\n  \"session\": \"Morning\",\n  \"visitorName\": \"Priya Nair\",\n  \"contactNumber\": \"9123456789\",\n  \"guestCount\": 4,\n  \"notes\": \"Need darshan slot confirmation\",\n  \"status\": \"Pending\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/bookings",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "bookings"]
+        }
+      }
+    },
+    {
+      "name": "Update Booking",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"templeName\": \"Srisailam Temple\",\n  \"visitDate\": \"2026-08-25\",\n  \"session\": \"Evening\",\n  \"visitorName\": \"Priya Nair\",\n  \"contactNumber\": \"9123456789\",\n  \"guestCount\": 5,\n  \"notes\": \"Updated group size\",\n  \"status\": \"Confirmed\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/bookings/3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "bookings", "3"]
+        }
+      }
+    },
+    {
+      "name": "Delete Booking",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/bookings/3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "bookings", "3"]
+        }
+      }
+    }
+  ]
+}
